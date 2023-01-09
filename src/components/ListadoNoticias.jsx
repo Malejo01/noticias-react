@@ -17,7 +17,7 @@ function ListadoNoticias() {
                 Últimas Noticias 
             </Typography>
 
-            <Grid>
+            <Grid container spacing={5}>
                 {noticias.map(noticia => (
                     <Noticia
                         key={noticia.url}
