@@ -15,7 +15,7 @@ const CATEGORIAS = [
 
 const Formulario =()=> {
     
-    
+    const {categoria, handleChangeCategoria} = useNoticias()
 
     return (
         <form>
@@ -23,6 +23,8 @@ const Formulario =()=> {
                 <InputLabel>Categoria</InputLabel>
                 <Select 
                 label='Categoria'
+                onChange={handleChangeCategoria}
+                value={categoria}
                 >
                     {CATEGORIAS.map(categoria => 
                         (<MenuItem key={categoria.value} 
