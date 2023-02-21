@@ -18,6 +18,7 @@ const NoticiasProvider= ({children}) => {
 
             setNoticias(data.articles)
             setTotalNoticias(data.totalResults)
+            setPagina(1)
         }
         consultarAPI()
     },[categoria])
@@ -35,14 +36,17 @@ const NoticiasProvider= ({children}) => {
         }
         consultarAPI()
     },[pagina])
+    
+
 
 
     const handleChangeCategoria = e =>{
         setCategoria(e.target.value)
     }
 
-    const handleChangePagina = e => {
-        console.log(e.target.textContent)
+    const handleChangePagina = (e, valor) =>{
+        setPagina(valor)
+        console.log(valor)
     }
 
     return (
@@ -52,7 +56,8 @@ const NoticiasProvider= ({children}) => {
                 handleChangeCategoria,
                 noticias,
                 totalNoticias,
-                handleChangePagina
+                handleChangePagina,
+                pagina 
             }}>
             {children}
         </NoticiasContext.Provider>
