@@ -24,8 +24,8 @@ function App() {
           </Grid>
 
           <ListadoNoticias/>
-      <Footer/>
         </Container>
+      
       </NoticiasProvider>
   )
 }
