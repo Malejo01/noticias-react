@@ -18,7 +18,23 @@ function ListadoNoticias() {
             >
                 Últimas Noticias 
             </Typography>
+        <Stack 
+                sx={{
+                    marginY:5
+                }}
+                spacing={2}
+                direction={'row'}
+                justifyContent='center'
+                alignItems='center'
 
+                >
+            <Pagination count={totalPaginas} 
+                        color="primary" 
+                        onChange={handleChangePagina}
+                        page={pagina}
+                        />
+        </Stack>
+        
             <Grid container spacing={5}> 
                 {noticias.map(noticia => (
                     <Noticia
