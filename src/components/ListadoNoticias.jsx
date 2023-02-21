@@ -4,8 +4,10 @@ import Noticia from './Noticia'
 
 function ListadoNoticias() {
 
-    const {noticias, totalNoticias} = useNoticias()
+    const {noticias, totalNoticias, handleChangePagina} = useNoticias()
         
+    
+    const totalPaginas = Math.ceil(totalNoticias/20) 
     return (
         <>
             <Typography
@@ -17,7 +19,7 @@ function ListadoNoticias() {
                 Últimas Noticias 
             </Typography>
 
-            <Grid container spacing={5}>
+            <Grid container spacing={5}> 
                 {noticias.map(noticia => (
                     <Noticia
                         key={noticia.url}
@@ -36,7 +38,10 @@ function ListadoNoticias() {
                 alignItems='center'
 
                 >
-            <Pagination count={3} color="primary" />
+            <Pagination count={totalPaginas} 
+                        color="primary" 
+                        onChange={handleChangePagina}
+                        />
         </Stack>
         </>
     )
