@@ -1,107 +1,156 @@
-@import url(//fonts.googleapis.com/css?family=Lato:300:400);
-
-body {
-  margin:0;
+.animazione{
+  position: relative;
+  left:0;
+  right:0;
+  animation: bubble 2s infinite;
 }
 
-h1 {
-  font-family: 'Lato', sans-serif;
-  font-weight:300;
-  letter-spacing: 2px;
-  font-size:36px;
-}
-p {
-  font-family: 'Lato', sans-serif;
-  letter-spacing: 1px;
-  font-size:14px;
-  color: #333333;
+.circle2{
+  width:300px;
+  height:300px;
+  background:linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+  clip-path: circle(30%);
+  z-index:-1;
 }
 
-.header {
-  position:relative;
-  text-align:center;
-  background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
-  color:white;
-  height: 40vh;
-  margin-bottom: 3;
-}
-.logo {
-  width:50px;
-  fill:white;
-  padding-right:15px;
-  display:inline-block;
-  vertical-align: middle;
+.pos-1{
+  bottom:-100px;
+  animation-delay:1s;
+  clip-path: circle(30%); 
 }
 
-.inner-header {
-  height:8vh;
-  width:100%;
-  margin: 0;
-  padding: 0;
+.pos-2{
+  bottom:-100px;
+  left:150px;
+  animation-delay:3s;
+  clip-path: circle(8%); 
 }
 
-.flex { /*Flexbox for containers*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.pos-3{
+  bottom:-100px;
+  left:300px;
+  animation-delay:7s;
+  clip-path: circle(35%); 
 }
 
-.waves {
-  position:relative;
+.pos-4{
+  bottom:-100px;
+  left:450px;
+  animation-delay:2.6s;
+  clip-path: circle(17%); 
+}
+
+.pos-5{
+  bottom:-100px;
+  left:600px;
+  animation-delay:3.2s;
+  clip-path: circle(40%); 
+}
+
+.pos-6{
+  bottom:-100px;
+  left:750px;
+  animation-delay:1.9s;
+  clip-path: circle(40%); 
+}
+
+.pos-7{
+  bottom:-100px;
+  left:900px;
+  animation-delay:3.6s;
+clip-path: circle(42%); 
+}
+
+.pos-8{
+  bottom:-100px;
+  left:1050px;
+  animation-delay:7s;
+  clip-path: circle(33%); 
+}
+
+.pos-9{
+  bottom:-100px;
+  left:1200px;
+  animation-delay:2.8s;
+  clip-path: circle(5%); 
+}
+
+.pos-10{
+  bottom:-100px;
+  left:1350px;
+  animation-delay:3.7s;
+  clip-path: circle(26%); 
+}
+
+.pos-15{
+  bottom:-100px;
+  left:50px;
+  animation-delay:3.3s;
+  clip-path: circle(30%); 
+}
+.pos-11{
+  bottom:-100px;
+  left:70px;
+  animation-delay:3.6s;
+  clip-path: circle(22%); 
+}
+.pos-12{
+  bottom:-100px;
+  left:160px;
+  animation-delay:4s;
+  clip-path: circle(17%); 
+}
+.pos-13{
+  bottom:-100px;
+  left:370px;
+  animation-delay:7s;
+  clip-path: circle(7%); 
+}
+.pos-14{
+  bottom:-100px;
+  left:590px;
+  animation-delay:3s;
+  clip-path: circle(49%); 
+}
+.pos-16{
+  bottom:-100px;
+  left:1400px;
+  animation-delay:3.6s;
+  clip-path: circle(22%); 
+}
+.pos-17{
+  bottom:-100px;
+  left:1500px;
+  animation-delay:4s;
+  clip-path: circle(17%); 
+}
+.pos-18{
+  bottom:-100px;
+  left:1580px;
+  animation-delay:7s;
+  clip-path: circle(7%); 
+}
+.pos-19{
+  bottom:-100px;
+  left:1700px;
+  animation-delay:3s;
+  clip-path: circle(49%); 
+}
+
+footer{
+  background:linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+  height:100px;
+  position: relative;
+  bottom:0;
   width: 100%;
-  height:15vh;
-  margin-bottom:-7px; /*Fix for safari gap*/
-  min-height:100px;
-  max-height:150px;
 }
 
-.content {
-  position:relative;
-  height:20vh;
-  text-align:center;
-  background-color: white;
+footer > a{
+  color: black;
 }
 
-/* Animation */
+@keyframes bubble{
+  from {}
+  to{ clip-path: circle(0%); bottom:150px;}
+}
 
-.parallax > use {
-  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
-}
-.parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
-}
-.parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
-}
-.parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
-}
-.parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
-}
-@keyframes move-forever {
-  0% {
-   transform: translate3d(-90px,0,0);
-  }
-  100% { 
-    transform: translate3d(85px,0,0);
-  }
-}
-/*Shrinking for mobile*/
-@media (max-width: 768px) {
-  .waves {
-    height:40px;
-    min-height:40px;
-  }
-  .content {
-    height:30vh;
-  }
-  h1 {
-    font-size:24px;
-  }
-}

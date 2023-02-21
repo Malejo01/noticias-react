@@ -10,7 +10,7 @@ function App() {
 
   return (
     <NoticiasProvider>
-        <Header/>
+    <Header/>
         <Container>
         
           <Grid 
@@ -24,7 +24,7 @@ function App() {
           </Grid>
 
           <ListadoNoticias/>
-
+      <Footer/>
         </Container>
       </NoticiasProvider>
   )
