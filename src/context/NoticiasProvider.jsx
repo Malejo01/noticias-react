@@ -15,7 +15,7 @@ const NoticiasProvider= ({children}) => {
             &language=es&category=${categoria}&pageSize=20&apiKey=${import.meta.env.VITE_API_KEY}`
 
             const {data} = await axios(url)
-            console.log("hola1")
+
             setNoticias(data.articles)
             setTotalNoticias(data.totalResults) 
             setPagina(1)
@@ -30,7 +30,7 @@ const NoticiasProvider= ({children}) => {
             &language=es&page=${pagina}&category=${categoria}&pageSize=20&apiKey=${import.meta.env.VITE_API_KEY}`
 
             const {data} = await axios(url)
-            console.log("hola2")
+            
             setNoticias(data.articles)
             setTotalNoticias(data.totalResults)
         }
