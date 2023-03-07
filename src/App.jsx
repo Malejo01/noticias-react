@@ -1,5 +1,4 @@
 import {Container, Grid, Typography} from '@mui/material'
-import Footer from './components/Footer'
 import Formulario from './components/Formulario'
 import Header from './components/Header'
 import ListadoNoticias from './components/ListadoNoticias'
